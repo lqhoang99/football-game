@@ -17,6 +17,7 @@ There are three ways to install SFML library:
 
 ```sh
 $ sudo apt-get install libsfml-dev
+```
 
 ### Install and run the game
 
