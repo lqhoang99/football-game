@@ -25,7 +25,6 @@ int main ()
         if (port1==0) {
           if (packet_receive >> nation1) {
             port1=port;
-            std::cout<<"port1:"+port;
             ip1=ip.toString();
           }
         }
@@ -33,7 +32,6 @@ int main ()
           if (packet_receive >> nation2)
           {
             port2=port;
-            std::cout<<"port2:"+port;
             ip2=ip.toString();
           }
           // socket.unbind();
