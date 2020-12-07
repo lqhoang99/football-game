@@ -4,7 +4,7 @@
 #include "headers/consts.h"
 
 const int WINDOW_WIDTH = 550;
-const int WINDOW_HEIGHT = 800;
+const int WINDOW_HEIGHT = 700;
 const int GOAL_WIDTH = 110*1.3;
 const int GOAL_HEIGHT = 44;
 const char* TITLE = "football-game";

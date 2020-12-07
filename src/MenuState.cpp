@@ -8,7 +8,7 @@ MenuState::MenuState(Game* game)
     m_options.push_back(sf::Text("About", p_game->fonts()->get("menu_font"), 40));
     m_options.push_back(sf::Text("Exit", p_game->fonts()->get("menu_font"), 40));
 
-    m_aboutText = sf::Text("This game is made in C++ from scratch, using SFML \n\nlibrary for audio/video/network.\n\n\n\nBy:\n\n\n\n\
+    m_aboutText = sf::Text("\n\n\n\nBy:\n\n\n\n\
 - LeQuangHoang\n\n- DangMinhNhat\n\n- BuiTheTron", p_game->fonts()->get("about_font"), 20);
     m_aboutText.setPosition(50, WINDOW_HEIGHT - 350);
 
