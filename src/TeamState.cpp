@@ -7,7 +7,7 @@ TeamState::TeamState(Game* game)
         "serbia",
         "spain",
         "russia",
-        "poland",
+        "vietNam",
         "turkey",
         "france",
         "germany"
