@@ -127,19 +127,20 @@ void Entity::checkBoundaryCollision()
 }
 void Entity::checkGoalCollision(Goal &goal , Goal &goal2)
 {
-
+ 
   if (m_image.getGlobalBounds().left < goal.position().x + 7 && m_image.getGlobalBounds().left + 2*m_radius > goal.position().x &&
       m_image.getGlobalBounds().top < goal.position().y + GOAL_HEIGHT && 2*m_radius + m_image.getGlobalBounds().top > goal.position().y)
   {
     m_direction.x *= -1;
     m_direction.y *= -1;
   }
-  
+
   if (m_image.getGlobalBounds().left < goal.position().x + GOAL_WIDTH && m_image.getGlobalBounds().left + 2*m_radius > goal.position().x + GOAL_WIDTH - 7 &&
       m_image.getGlobalBounds().top < goal.position().y + GOAL_HEIGHT && 2*m_radius + m_image.getGlobalBounds().top > goal.position().y)
   {
     m_direction.x *= -1;
-    m_direction.y *= -1;  
+    m_direction.y *= -1;
+  }
 
   if (m_image.getGlobalBounds().left < goal2.position().x + 7 && m_image.getGlobalBounds().left + 2*m_radius > goal2.position().x &&
       m_image.getGlobalBounds().top < goal2.position().y + GOAL_HEIGHT && 2*m_radius + m_image.getGlobalBounds().top > goal2.position().y)
@@ -147,7 +148,7 @@ void Entity::checkGoalCollision(Goal &goal , Goal &goal2)
     m_direction.x *= -1;
     m_direction.y *= -1;
   }
-  
+ 
   if (m_image.getGlobalBounds().left < goal2.position().x + GOAL_WIDTH && m_image.getGlobalBounds().left + 2*m_radius > goal2.position().x + GOAL_WIDTH - 7 &&
       m_image.getGlobalBounds().top < goal2.position().y + GOAL_HEIGHT && 2*m_radius + m_image.getGlobalBounds().top > goal2.position().y)
   {
