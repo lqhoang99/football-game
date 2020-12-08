@@ -33,18 +33,16 @@ void defineWindow(sf::RenderWindow &window)
         window.close();
     }
 
-    // Ciscenje sadrzaja prozora
     window.clear(sf::Color::White);
 
     p2.sendMessage();
 
     p2.receiveMessage();
 
-    // p2.pisi();
+
 
     p2.drawCircle(window);
 
-    // Ponovno iscrtavanje sadrzaja prozora
     window.display();
   }
 }

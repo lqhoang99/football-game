@@ -74,7 +74,7 @@ void MenuState::keyboard(sf::Keyboard::Key& key) {
             p_game->exit();
         }
     } else if (key == sf::Keyboard::Key::BackSpace) {
-        m_about = false; // kada se klikne dugme backspace, izlazi se iz about
+        m_about = false; 
     }
 }
 void MenuState::mouse(sf::Event::MouseButtonEvent& event) {

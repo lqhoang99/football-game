@@ -13,7 +13,7 @@ public:
     Entity(double x, double y, const sf::Texture& texture,double x_, double y_);
     Entity(const sf::Vector2f& position, const sf::Texture& texture);
 
-    // geteri
+   
     const sf::Vector2f& position() const;
     const sf::Vector2f& direction() const;
     const sf::Vector2f& center() const;
@@ -21,7 +21,7 @@ public:
     const int radius() const;
     const double mass() const;
 
-    // seteri
+
     void setPosition(double x, double y);
     void setPosition(const sf::Vector2f& position);
     void setDirection(double x , double y);
@@ -38,7 +38,7 @@ public:
     int isInGoal(Goal &goal , Goal &goal2);
 
 private:
-    sf::Vector2f m_position; // Mozda staviti Vector2f
+    sf::Vector2f m_position; 
     sf::Vector2f m_center;
     sf::Sprite m_image;
     sf::Vector2f m_direction;

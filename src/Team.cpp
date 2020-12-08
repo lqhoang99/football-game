@@ -11,14 +11,12 @@ Team::Team(const sf::Texture& texture, Entity* ball, Goal *goal,Goal *goal2, uns
     m_players.push_back(new Entity(0, 0, texture, 0, 0));
   }
 
-  // lopta
   m_ball = ball;
   //goal
   m_goal1 = goal;
   m_goal2 = goal2;
 
 
-  // kada nije selektovan nijedan igrac, bice vrednost veca od velicine niza
   m_selected = m_players.size() + 1;
 }
 Team::~Team() {
@@ -67,7 +65,6 @@ void Team::mouse(sf::Event::MouseButtonEvent& event) {
       double hit_x = (m_players[m_selected]->position().x - event.x)/10;
       double hit_y = (m_players[m_selected]->position().y - event.y)/10;
 
-      // hit_max regulise koliki je maksimalno jak udarac
       const double hit_max = 20;
       hit_x = ((std::abs(hit_x) > hit_max) ? (hit_x > 0 ? hit_max : - hit_max) : hit_x);
       hit_y = ((std::abs(hit_y) > hit_max) ? (hit_y > 0 ? hit_max : - hit_max) : hit_y);

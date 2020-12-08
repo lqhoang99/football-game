@@ -18,11 +18,10 @@ public:
 	~Game();
 	void run();
 
-	// ove dve metode, a bice ih vise, vracaju menadzere resursa
 	const TextureManager* textures() const;
 	const FontManager* fonts() const;
 	const SoundBufferManager& sounds() const;
-	void changeState(State* state); // Metoda koja dozvoljava promenu iz jednog u drugi State
+	void changeState(State* state); 
 	void exit();
 private:
 	void proccessEvents();
@@ -36,7 +35,7 @@ private:
 	FontManager m_fonts;
 	SoundBufferManager m_sounds;
 
-	State* m_currState; // Ovo je pokazivac na trenutni State (na pocetku MenuState)
+	State* m_currState;
 	sf::Clock m_clock;
 };
 #endif

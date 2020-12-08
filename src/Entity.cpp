@@ -10,7 +10,7 @@ Entity::Entity(double x, double y, const sf::Texture& texture, double x_, double
     m_radius = m_image.getTexture()->getSize().x/2;
     m_center.x = x + m_radius;
     m_center.y =  y + m_radius;
-    // Stavljeno zbog testiranja funkcije move
+
     m_direction.x=x_;
     m_direction.y=y_;
     m_mass=0.1*(m_radius);
@@ -87,15 +87,12 @@ void Entity::render(sf::RenderWindow& window) {
 
 void Entity::move()
 {
-  // Uvecavamo trenutnu poziciju objekta, idemo za x i y koliko kaze vektor pravca
   m_position.x+=m_direction.x;
   m_position.y+=m_direction.y;
 
-  // Azurira se centar sprite-a, samim tim i entity-a
   m_center.x = m_position.x + m_radius;
   m_center.y = m_position.y + m_radius;
 
-  // Postavlja se pozicija teksture kako bi iscrtavanje bilo moguce
   m_image.setPosition(m_position.x-m_radius,m_position.y-m_radius);
 }
 
@@ -130,28 +127,27 @@ void Entity::checkBoundaryCollision()
 }
 void Entity::checkGoalCollision(Goal &goal , Goal &goal2)
 {
-  // gornji gol leva stativa
+
   if (m_image.getGlobalBounds().left < goal.position().x + 7 && m_image.getGlobalBounds().left + 2*m_radius > goal.position().x &&
       m_image.getGlobalBounds().top < goal.position().y + GOAL_HEIGHT && 2*m_radius + m_image.getGlobalBounds().top > goal.position().y)
   {
     m_direction.x *= -1;
     m_direction.y *= -1;
   }
-  // gornji  gol desna stativa
+  
   if (m_image.getGlobalBounds().left < goal.position().x + GOAL_WIDTH && m_image.getGlobalBounds().left + 2*m_radius > goal.position().x + GOAL_WIDTH - 7 &&
       m_image.getGlobalBounds().top < goal.position().y + GOAL_HEIGHT && 2*m_radius + m_image.getGlobalBounds().top > goal.position().y)
   {
     m_direction.x *= -1;
-    m_direction.y *= -1;
-  }
-  //donji gol leva stativa
+    m_direction.y *= -1;  
+
   if (m_image.getGlobalBounds().left < goal2.position().x + 7 && m_image.getGlobalBounds().left + 2*m_radius > goal2.position().x &&
       m_image.getGlobalBounds().top < goal2.position().y + GOAL_HEIGHT && 2*m_radius + m_image.getGlobalBounds().top > goal2.position().y)
   {
     m_direction.x *= -1;
     m_direction.y *= -1;
   }
-  //donji gol desna stativa
+  
   if (m_image.getGlobalBounds().left < goal2.position().x + GOAL_WIDTH && m_image.getGlobalBounds().left + 2*m_radius > goal2.position().x + GOAL_WIDTH - 7 &&
       m_image.getGlobalBounds().top < goal2.position().y + GOAL_HEIGHT && 2*m_radius + m_image.getGlobalBounds().top > goal2.position().y)
   {

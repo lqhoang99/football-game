@@ -25,7 +25,7 @@ private:
     short m_selected;
     bool m_about;
 
-    void setBallPosition(); // pozicionira lopticu pored svake opcije
+    void setBallPosition(); 
 };
 
 #endif

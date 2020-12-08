@@ -37,3 +37,10 @@ $ make
 $ sudo ./main
 ```
 on both computers.
+
+## Gameplay
+
+* Select:  **space** 
+* Exit the game: **Escape**
+* Go back:  **Backspace** 
+* Movement: **Mouse** 

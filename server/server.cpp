@@ -49,8 +49,10 @@ int main ()
 void send(unsigned short port1,sf::Packet packet_send1,int nation1,unsigned short port2,sf::Packet packet_send2,int nation2,sf::IpAddress ip,std::string ip1,std::string ip2)
 {
   packet_send1 << port2 << nation2 << ip2 << true;
+  std::cout << "packet_send1" << packet_send1;
   socket.send(packet_send1,ip1,port1);
   packet_send2 << port1 << nation1 << ip1 << false;
+  std::cout << "packet_send2" << packet_send2;
   socket.send(packet_send2,ip2,port2);
 }
 

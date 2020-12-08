@@ -21,12 +21,9 @@ void client::bindPort()
 
 void client::send(const unsigned short port, int number, double x, double y)
 {
-    // Pakujemo podatke u paket
     m_packet_send << number << x << y;
-    // Saljemo podatke
     if (m_sender.send(m_packet_send,m_ipAddress_send,port) == sf::UdpSocket::Done){
     }
-    // Cistimo paket, praznimo ga
     m_packet_send.clear();
 }
 
@@ -45,15 +42,15 @@ bool client::receive (std::vector<Entity*> players)
   int number;
   double x,y;
 
-  // Adresa sa kojeg su poslati podaci
+ 
   sf::IpAddress ip;
-  // Port sa kojeg su stigli podaci
+
   unsigned short port;
-  // Cekamo na poruku 1 milisekundu, ako je socket spreman uzimaju se podaci
+
   if (m_selector.wait(sf::milliseconds(1))) {
-    // Primamo paket
+  
     if (m_receiver.receive(m_packet_receive,ip,port) == sf::UdpSocket::Done) {
-      // Uzimamo podatke iz paketa
+ 
       if (m_packet_receive >> number >> x >> y) {
         std::cout << number << " " << x << " " << y << std::endl;
         players[number]->setDirection(-x,-y);

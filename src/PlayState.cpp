@@ -8,11 +8,9 @@ PlayState::PlayState(Game* game, const std::string& team, const std::string& tea
   m_goal_home = new Goal((WINDOW_WIDTH- GOAL_WIDTH)/2, 0, game->textures()->get("goal2"));
   m_goal_away = new Goal((WINDOW_WIDTH - GOAL_WIDTH)/2, WINDOW_HEIGHT - GOAL_HEIGHT , game->textures()->get("goal"));
 
-  // Inicijalizacija prvog tima i povezivanje
   m_team1 = new Team(game->textures()->get(team), m_ball, m_goal_home,m_goal_away, receive_port, send_port, ip, turn);
   m_team1->setFormation(new Formation(120  , WINDOW_HEIGHT - 120, WINDOW_WIDTH -120 , WINDOW_HEIGHT - 120,  WINDOW_WIDTH/2  , WINDOW_HEIGHT - 250));
 
-  // Inicijalizacija drugog tima i povezivanje
   m_team2 = new Team(game->textures()->get(team2), m_ball, m_goal_home,m_goal_away, receive_port, send_port, ip, !turn);
   m_team2->setFormation(new Formation(WINDOW_WIDTH-120, 120, 120, 120, WINDOW_WIDTH/2 , 250 ));
 
@@ -79,8 +77,6 @@ void PlayState::keyboard(sf::Keyboard::Key& key) {
 }
 void PlayState::mouse(sf::Event::MouseButtonEvent& event) {
 
-  // ako je klikut igrac i svi saigraci su zaustavljeni onda moze da se igrac
-  // treba dodati uslov i da je potez u toku ili tako nesto za mrezu
   if(m_team1->stoped() && m_team2->stoped() && m_team1->turn() == true){
     m_team1->mouse(event);
   }

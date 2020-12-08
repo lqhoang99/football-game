@@ -99,18 +99,14 @@ void TeamState::keyboard(sf::Keyboard::Key& key) {
         // socket.unbind();
 
         // std::cout << port_receive << " " << port_send << std::endl;
-        /*
-        * Probati da se konektuje, tj. poveze sa mrezom.
-        * Ako protivnickog igraca jos nema, ili sta vec onda ide ovaj kod:
-        */
+
         m_client.send(m_selected);
 
         m_loading = true;
         return;
-        // u suprotnom prelazi u PlayState, izmenicemo argumente da se posalje i
-        // naziv protivnicke ekipe
+    
         // p_game->changeState(new PlayState(p_game, m_teams[m_client.selected()], m_client.receive(), m_client.send()));
-        return;// mora return da se ne bi izvrsilo ovo setTeams nakon promene
+        return;
     } else if (key == sf::Keyboard::Key::BackSpace) {
         if (m_loading) {
             m_loading = false;
